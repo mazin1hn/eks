@@ -17,13 +17,13 @@ resource "aws_subnet" "private" {
     for_each = {
         private_subnet_a = {
             cidr_block = var.private_subnet_a_cidr_block
-            az = var.private_subnet_a_az
+            az = var.az_a
             name = var.private_subnet_a_name
         }
         
         private_subnet_b = {
             cidr_block = var.private_subnet_b_cidr_block
-            az = var.private_subnet_b_az
+            az = var.az_b
             name = var.private_subnet_b_name
         }
     }
@@ -43,13 +43,13 @@ resource "aws_subnet" "public" {
     for_each = {
         public_subnet_a = {
             cidr_block = var.public_subnet_a_cidr_block
-            az = var.public_subnet_a_az
+            az = var.az_a
             name = var.public_subnet_a_name
         }
         
         public_subnet_b = {
             cidr_block = var.public_subnet_b_cidr_block
-            az = var.public_subnet_b_az
+            az = var.az_b
             name = var.public_subnet_b_name
         }
     }
