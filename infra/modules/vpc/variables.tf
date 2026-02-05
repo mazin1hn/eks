@@ -32,11 +32,6 @@ variable "private_subnet_a_cidr_block" {   #Can change per env
   
 }
 
-variable "private_subnet_a_az" {
-    type = string 
-    default = "eu-west-2a"
-  
-}
 
 variable "private_subnet_a_name" {
     type = string 
@@ -50,11 +45,6 @@ variable "private_subnet_b_cidr_block" {   #Can change per env
   
 }
 
-variable "private_subnet_b_az" {
-    type = string 
-    default = "eu-west-2b"
-  
-}
 
 variable "private_subnet_b_name" {
     type = string 
@@ -71,11 +61,6 @@ variable "public_subnet_a_cidr_block" {   #Can change per env
   
 }
 
-variable "public_subnet_a_az" {
-    type = string 
-    default = "eu-west-2a"
-  
-}
 
 variable "public_subnet_a_name" {
     type = string 
@@ -89,15 +74,24 @@ variable "public_subnet_b_cidr_block" {   #Can change per env
   
 }
 
-variable "public_subnet_b_az" {
-    type = string 
-    default = "eu-west-2b"
-  
-}
 
 variable "public_subnet_b_name" {
     type = string 
     default = "public-subnet-b"
+  
+}
+
+#Availability zones
+
+variable "az_a" {
+    type = string 
+    default = null
+  
+}
+
+variable "az_b" {
+    type = string 
+    default = null
   
 }
 
