@@ -208,3 +208,7 @@ resource "aws_eks_addon" "kube_proxy" {
 
 
 
+
+
+
+
