@@ -12,9 +12,6 @@ module "vpc" {
 
 }
 
-module "iam" {
-    source = "./modules/iam"
-}
 
 
 module "eks" {
@@ -22,8 +19,24 @@ module "eks" {
   
 private_subnet_ids = module.vpc.private_subnet_ids
 vpc_id = module.iam.vpc_id
+ebs_csi_role_arn = module.irsa.ebs_csi_role_arn
 
 
 
 }
   
+module "iodc" {
+    source = "./modules/oidc"
+
+    cluster_oidc_issuer = module.eks.cluster_oidc_issuer    
+}
+
+resource "aws_eks_addon" "ebs_csi_driver" {
+    cluster_name = module.eks.cluster_name
+    addon_name = "ebs_csi_driver"
+    depends_on = [aws_eks_node_group.eks_node_group] 
+    resolve_conflicts_on_create = "OVERWRITE"
+    resolve_conflicts_on_update = "OVERWRITE"
+    service_account_role_arn = module.iodc.ebs_csi_role_arn
+  
+}
