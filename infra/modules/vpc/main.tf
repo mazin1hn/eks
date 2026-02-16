@@ -82,9 +82,9 @@ resource "aws_nat_gateway" "eks" {
     availability_mode = var.nat_gw_availability_mode
     connectivity_type = var.nat_gw_connectivity_type
 
-    tags = [
+    tags = {
         Name = var.nat_gw_name
-    ]
+    }
 }
 
 #Route Tables 
