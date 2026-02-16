@@ -8,3 +8,12 @@ resource "aws_ecr_repository" "eks" {
     scan_on_push = var.ecr_scan_on_push
   }
 }
+
+resource "aws_s3_bucket" "eks" {
+  bucket = "mazin-eks-s3-bucket"
+
+  tags = {
+    Name        = "eks-bucket"
+    
+  }
+}
