@@ -1,0 +1,9 @@
+spec:
+  source:
+    repoURL: https://prometheus-community.github.io/helm-charts
+    chart: kube-prometheus-stack
+    targetRevision: 58.0.0
+
+    helm:
+      valueFiles:
+        - helm/platform/monitoring/values.yaml
