@@ -5,5 +5,37 @@ spec:
     targetRevision: 1.20.0
 
     helm:
-      valueFiles:
-        - helm/platform/external-dns/values.yaml
+      values: |
+        provider: cloudflare
+
+        sources:
+          - ingress
+
+        policy: upsert-only
+
+        domainFilters:
+          - "eks.mazin1hn.uk"
+
+        txtOwnerId: "eks_cluster"
+
+        env:
+          - name: CF_API_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: cloudflare-api-token
+                key: api-token
+
+        serviceAccount:
+          create: true
+          name: external-dns
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kube-system
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
