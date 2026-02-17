@@ -4,6 +4,4 @@ spec:
     chart: traefik-ingress
     targetRevision: 38.0.1
 
-    helm:
-      valueFiles:
-        - helm/platform/traefik-ingress/values.yaml
+    
