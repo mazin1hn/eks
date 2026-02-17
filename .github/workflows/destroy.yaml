@@ -1,4 +1,4 @@
-name: Build and Push Docker Image 
+name: Destroy
 
 on:
   workflow_dispatch:
