@@ -30,15 +30,15 @@ jobs:
       uses: terraform-linters/setup-tflint@v6
 
     - name: Terraform fmt
-      working-directory: infra/
+      working-directory: infra
       run: terraform fmt --recursive
 
     - name: Terraform validate
-      working-directory: infra/
+      working-directory: infra
       run: terraform validate 
 
     - name: Run Terraform Lint 
-      working-directory: infra/
+      working-directory: infra
       run: tflint -f compact 
 
     - name: Run Checkov
@@ -57,15 +57,15 @@ jobs:
        aws-region: eu-west-2
     
     - name: Terraform Init 
-      working-directory: infra/
+      working-directory: infra
       run: terraform init 
 
     - name: Terraform Plan 
-      working-directory: infra/
+      working-directory: infra
       run: terraform plan
 
     - name: Terraform Apply 
-      working-directory: infra/
+      working-directory: infra
       run: terraform apply -auto-approve
 
 
