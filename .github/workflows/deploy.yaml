@@ -33,6 +33,10 @@ jobs:
       working-directory: infra
       run: terraform fmt --recursive
 
+    - name: Terraform Init 
+      working-directory: infra
+      run: terraform init 
+
     - name: Terraform validate
       working-directory: infra
       run: terraform validate 
@@ -55,10 +59,6 @@ jobs:
       with:
        role-to-assume: ${{ secrets.AWS_EKS_ROLE }}
        aws-region: eu-west-2
-    
-    - name: Terraform Init 
-      working-directory: infra
-      run: terraform init 
 
     - name: Terraform Plan 
       working-directory: infra
