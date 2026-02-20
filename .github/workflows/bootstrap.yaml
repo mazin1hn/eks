@@ -26,6 +26,10 @@ jobs:
     - name: Setup Terraform 
       uses: hashicorp/setup-terraform@v3
 
+    - name: Terraform Init 
+      working-directory: infra/bootstrap
+      run: terraform init 
+
     - name: Setup Terraform Lint 
       uses: terraform-linters/setup-tflint@v6
 
@@ -55,10 +59,7 @@ jobs:
       with:
        role-to-assume: ${{ secrets.AWS_BOOTSTRAP_ROLE }}
        aws-region: eu-west-2
-    
-    - name: Terraform Init 
-      working-directory: infra/bootstrap
-      run: terraform init 
+  
 
     - name: Terraform Plan 
       working-directory: infra/bootstrap
