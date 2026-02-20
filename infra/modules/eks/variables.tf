@@ -101,7 +101,7 @@ variable "ami_type" {
 }
 
 variable "instance_types" {
-    type = string(list)
+    type = list(string)
     default = "t3.micro"
   
 }
