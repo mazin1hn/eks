@@ -99,7 +99,7 @@ resource "aws_iam_policy" "external_dns_policy" {
 
 #External DNS IAM role policy attatchment 
 
-resource "aws_iam_role_policy_attachment" "ebs_policy" {
+resource "aws_iam_role_policy_attachment" "external_dns" {
 
   role       = aws_iam_role.external_dns_role.name
   policy_arn = aws_iam_policy.external_dns_policy.arn
