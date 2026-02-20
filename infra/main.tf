@@ -19,7 +19,7 @@ module "eks" {
   
 private_subnet_ids = module.vpc.private_subnet_ids
 vpc_id = module.iam.vpc_id
-ebs_csi_role_arn = module.irsa.ebs_csi_role_arn
+
 
 
 
