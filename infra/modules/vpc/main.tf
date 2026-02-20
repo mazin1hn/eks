@@ -81,7 +81,7 @@ resource "aws_nat_gateway" "eks" {
     vpc_id            = aws_vpc.eks.id
     availability_mode = var.nat_gw_availability_mode
     connectivity_type = var.nat_gw_connectivity_type
-
+    
     tags = {
         Name = var.nat_gw_name
     }
