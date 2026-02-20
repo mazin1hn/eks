@@ -21,8 +21,6 @@ output "nat_gateway_id" {
 
 output "private_subnet_ids" {
   description = "The IDS of both private subnets"
-  value = [ 
-    aws_subnet.private_subnet_a.id,
-    aws_subnet.private_subnet_b.id]
+  value = values(aws_subnet.private)[*].id
 
 }
