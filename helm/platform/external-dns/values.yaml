@@ -1,7 +1,0 @@
-provider: aws 
-sources: ["ingress"]
-policy: upsert-only 
-domainFilters: ["eks.mazin1hn.uk"]
-txtOwnerId: "eks_cluster"
-serviceAccount.create: true 
-serviceAccount.annotations: #IRSA Account ARNS
