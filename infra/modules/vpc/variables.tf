@@ -144,7 +144,7 @@ variable "private_route_table_name" {
 
 variable "destination_cidr_block" {
     type = string 
-    default = "[0.0.0.0/0]"
+    default = "0.0.0.0/0"
   
 }
 
