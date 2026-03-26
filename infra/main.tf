@@ -40,3 +40,4 @@ resource "aws_eks_addon" "ebs_csi_driver" {
     service_account_role_arn = module.oidc.ebs_csi_role_arn
   
 }
+ 
