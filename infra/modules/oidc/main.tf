@@ -1,7 +1,7 @@
 # Connect IODC issuer url to IODC provider 
 
 
-data "tls_certificate" "example" {
+data "tls_certificate" "eks_oidc" {
   url = var.cluster_oidc_issuer
 }
 
