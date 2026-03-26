@@ -25,7 +25,7 @@ vpc_id = module.vpc.vpc_id
 
 }
   
-module "iodc" {
+module "oidc" {
     source = "./modules/oidc"
 
     cluster_oidc_issuer = module.eks.cluster_oidc_issuer    
