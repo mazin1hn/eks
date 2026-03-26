@@ -47,7 +47,7 @@ resource "aws_iam_role" "eks_cluster_role" {
   })
 
     tags = {
-        Name = aws_iam_role.eks_cluster_role.name
+        Name = "eks_cluster_iam_role"
     }
   
 }
@@ -114,7 +114,7 @@ resource "aws_iam_role" "eks_node_group_role" {
   })
 
     tags = {
-        Name = aws_iam_role.eks_node_group_role.name
+        Name = "eks_node_group_iam_role"
     }
   
 }
