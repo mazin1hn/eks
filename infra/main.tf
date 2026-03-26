@@ -34,9 +34,9 @@ module "iodc" {
 resource "aws_eks_addon" "ebs_csi_driver" {
     cluster_name = module.eks.cluster_name
     addon_name = "ebs_csi_driver"
-    depends_on = [aws_eks_node_group.eks_node_group] 
+    depends_on = [module.eks] 
     resolve_conflicts_on_create = "OVERWRITE"
     resolve_conflicts_on_update = "OVERWRITE"
-    service_account_role_arn = module.iodc.ebs_csi_role_arn
+    service_account_role_arn = module.oidc.ebs_csi_role_arn
   
 }
