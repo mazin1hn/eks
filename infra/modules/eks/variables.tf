@@ -16,8 +16,8 @@ variable "vpc_id" {
 #EKS Cluster 
 
 variable "my_ip" {
-  type    = number 
-  default = 161.12.45.16
+  type    = string
+  default = "161.12.45.16"
 
 }
 
