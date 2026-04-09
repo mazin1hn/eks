@@ -7,7 +7,7 @@
 *.tfstate
 *.tfstate.*
 *.tfvars.json
-terraform.tfvars
+
 
 terraform.tfplan
 terraform.plan
