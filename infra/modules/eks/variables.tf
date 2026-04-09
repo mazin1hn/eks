@@ -96,7 +96,7 @@ variable "eks_node_group_min_size" {
 
 variable "ami_type" {
     type = string 
-    default = "AL2_x86_64"
+    default = "AL2023_x86_64_STANDARD"
   
 }
 
