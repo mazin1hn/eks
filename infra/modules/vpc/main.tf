@@ -1,7 +1,7 @@
 #VPC 
 
 resource "aws_vpc" "eks" {
-    cidr_block = var.vpc_cidr_block
+    cidr_block = "10.0.0.0/16" #var.vpc_cidr_block
     enable_dns_hostnames = var.vpc_enable_dns_hostnames
     enable_dns_support = var.vpc_enable_dns_support
 
