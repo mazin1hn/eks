@@ -2,7 +2,7 @@
 
 variable "vpc_cidr_block" { #Can change per env 
     type = string 
-    default = null
+    default = "10.0.0.0/16"
   
 }
 
