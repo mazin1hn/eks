@@ -31,14 +31,5 @@ module "oidc" {
     cluster_oidc_issuer = module.eks.cluster_oidc_issuer    
 }
 
-#resource "aws_eks_addon" "ebs_csi_driver" {
-    #cluster_name = module.eks.cluster_name
-    #addon_name = "ebs_csi_driver"
-    #addon_version = "v1.59.0-eksbuild.1"
-    #depends_on = [module.eks] 
-    #resolve_conflicts_on_create = "OVERWRITE"
-    #resolve_conflicts_on_update = "OVERWRITE"
-    #service_account_role_arn = module.oidc.ebs_csi_role_arn
-  
-#}
+
  
