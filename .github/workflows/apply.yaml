@@ -60,4 +60,5 @@ jobs:
         kubectl create secret generic cloudflare-api-token \
           -n kube-system \
           --from-literal=api-token='${{ secrets.CF_API_TOKEN }}' \
-          --dry-run=client -o yaml | kubectl apply -f -
+          --dry-run=client -o yaml | kubectl apply -f - \
+          --validate=false
