@@ -34,6 +34,7 @@ module "oidc" {
 resource "aws_eks_addon" "ebs_csi_driver" {
     cluster_name = module.eks.cluster_name
     addon_name = "ebs_csi_driver"
+    addon_version = "v1.59.0"
     depends_on = [module.eks] 
     resolve_conflicts_on_create = "OVERWRITE"
     resolve_conflicts_on_update = "OVERWRITE"
