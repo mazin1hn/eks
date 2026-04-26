@@ -1,3 +1,9 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus
+  namespace: argocd
+
 spec:
   source:
     repoURL: https://prometheus-community.github.io/helm-charts
