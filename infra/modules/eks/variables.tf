@@ -82,13 +82,13 @@ variable "eks_node_group_name" {
 
 variable "eks_node_group_desired_size" {
     type = number 
-    default = 3
+    default = 2
   
 }
 
 variable "eks_node_group_max_size" {
     type = number 
-    default = 6
+    default = 3
   
 }
 
