@@ -15,11 +15,11 @@ variable "vpc_id" {
 
 #EKS Cluster 
 
-variable "my_ip" {
-  type    = string
-  default = "0.0.0.0"
+#variable "my_ip" {
+  #type    = string
+  #default = "0.0.0.0"
 
-}   #temporory
+#}   #temporory
 
 
 variable "eks_cluster_name" {
