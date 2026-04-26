@@ -5,8 +5,10 @@ metadata:
   namespace: argocd
 
 spec:
+  project: default
+
   source:
-    repoURL: https://kubernetes-sigs.github.io/external-dns/ 
+    repoURL: https://kubernetes-sigs.github.io/external-dns/
     chart: external-dns
     targetRevision: 1.20.0
 
@@ -20,8 +22,8 @@ spec:
         policy: upsert-only
 
         domainFilters:
-          - "eks.mazin1hn.uk"
-
+          - "mazin1hn.uk"  
+          
         txtOwnerId: "eks_cluster"
 
         env:
