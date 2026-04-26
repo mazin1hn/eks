@@ -59,8 +59,10 @@ resource "aws_subnet" "public" {
     availability_zone = each.value.az
     
     tags = {
-        Name = each.value.name 
-    }
+  "kubernetes.io/role/elb" = "1"
+  "kubernetes.io/cluster/eks_cluster" = "shared"
+}
+
 }
 
 #Internet Gateway 
