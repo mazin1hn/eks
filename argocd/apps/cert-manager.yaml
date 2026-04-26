@@ -6,19 +6,22 @@ metadata:
 
 spec:
   project: default
+
   source:
     repoURL: https://charts.jetstack.io 
     chart: cert-manager
-    targetRevision: 1.19.3
+    targetRevision: v1.19.3
+    helm:
+      values: |
+        installCRDs: true
 
   destination:
     server: https://kubernetes.default.svc
     namespace: cert-manager
 
-    helm:
-      values: |
-        installCRDs: true
-
   syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
     syncOptions:
       - CreateNamespace=true
