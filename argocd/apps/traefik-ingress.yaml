@@ -4,9 +4,19 @@ metadata:
   name: traefik-ingress
   namespace: argocd
 spec:
+  project: default
+
   source:
     repoURL: https://traefik.github.io/charts
     chart: traefik-ingress
     targetRevision: 38.0.1
 
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: traefik
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
     
