@@ -24,3 +24,8 @@ output "private_subnet_ids" {
   value = values(aws_subnet.private)[*].id
 
 }
+
+output "public_subnet_ids" {
+  description = "The IDS of both public subnets" 
+  value = values(aws_subnet.public)[*].id
+}

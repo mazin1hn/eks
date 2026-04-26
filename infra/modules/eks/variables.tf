@@ -1,9 +1,13 @@
 
 
-variable "private_subnet_ids" {
+variable "subnet_ids" {
   type    = list(string)
-  default = null
 
+}
+
+variable "private_subnet_ids" {
+    type = list(string)
+  
 }
 
 variable "vpc_id" {
