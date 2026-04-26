@@ -18,3 +18,7 @@ spec:
     helm:
       values: |
         installCRDs: true
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
