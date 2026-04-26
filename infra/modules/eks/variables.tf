@@ -17,9 +17,9 @@ variable "vpc_id" {
 
 variable "my_ip" {
   type    = string
-  default = "161.12.45.16"
+  default = "0.0.0.0"
 
-}
+}   #temporory
 
 
 variable "eks_cluster_name" {

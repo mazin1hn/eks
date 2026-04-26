@@ -17,7 +17,7 @@ resource "aws_eks_cluster" "eks_cluster" {
       subnet_ids = var.private_subnet_ids
       endpoint_private_access = var.eks_cluster_endpoint_private_access  
       endpoint_public_access =var.eks_cluster_endpoint_public_access 
-      public_access_cidrs = [ "${var.my_ip}/32" ]
+      public_access_cidrs = [ "${var.my_ip}/0" ] #temporary
     }
 
     enabled_cluster_log_types = var.enabled_cluster_log_types
@@ -205,6 +205,7 @@ resource "aws_eks_addon" "kube_proxy" {
     resolve_conflicts_on_update = var.addons_resolve_conflicts
   
 }
+
 
 
 
