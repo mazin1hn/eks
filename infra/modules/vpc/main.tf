@@ -33,8 +33,11 @@ resource "aws_subnet" "private" {
     availability_zone = each.value.az
     
     tags = {
-        Name = each.value.name 
-    }
+  Name = each.value.name
+
+  "kubernetes.io/cluster/eks_cluster" = "shared"
+  "kubernetes.io/role/internal-elb"   = "1"
+}
 }
 
 #Public Subnets 
@@ -59,8 +62,10 @@ resource "aws_subnet" "public" {
     availability_zone = each.value.az
     
     tags = {
-  "kubernetes.io/role/elb" = "1"
+  Name = each.value.name
+
   "kubernetes.io/cluster/eks_cluster" = "shared"
+  "kubernetes.io/role/elb"            = "1"
 }
 
 }
