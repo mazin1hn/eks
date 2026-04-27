@@ -124,6 +124,23 @@ resource "aws_route" "private_route" {
     nat_gateway_id = aws_nat_gateway.eks.id
   
 }
+
+#Route table association's
+
+resource "aws_route_table_association" "private_route_table_association" {
+  subnet_id      = aws_subnet.private.id
+  route_table_id = aws_route_table.eks["private"].id
+}
+
+resource "aws_route_table_association" "publiv_route_table_association" {
+  subnet_id      = aws_subnet.public.id
+  route_table_id = aws_route_table.eks["public"].id
+}
+
+
+
+
+
   
 
 
