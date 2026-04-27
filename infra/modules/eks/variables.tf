@@ -82,19 +82,19 @@ variable "eks_node_group_name" {
 
 variable "eks_node_group_desired_size" {
     type = number 
-    default = 2
+    default = 3
   
 }
 
 variable "eks_node_group_max_size" {
     type = number 
-    default = 3
+    default = 5
   
 }
 
 variable "eks_node_group_min_size" {
     type = number 
-    default = 2
+    default = 3
   
 }
 
@@ -106,7 +106,7 @@ variable "ami_type" {
 
 variable "instance_types" {
     type = list(string)
-    default = ["t3.medium"]
+    default = ["t3.large"]
   
 }
 
