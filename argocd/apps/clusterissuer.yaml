@@ -10,6 +10,9 @@ spec:
       name: letsencrypt-prod-key
 
     solvers:
-      - http01:
-          ingress:
-            ingressClassName: traefik
+      - dns01:
+          cloudflare:
+            email: mazinwork@outlook.com
+            apiTokenSecretRef:
+              name: cloudflare-api-token
+              key: api-token
