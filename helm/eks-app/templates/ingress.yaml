@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
  name: eks-ingress
  annotations:
-  certmanager.io/cluster-issuer: letsencrypt-prod
+  cert-manager.io/cluster-issuer: letsencrypt-prod
 
 spec:
  ingressClassName: traefik
@@ -13,7 +13,7 @@ spec:
     secretName: eks-app-tls
 
  rules:
-  - hosts: app.mazin1hn.uk
+  - host: app.mazin1hn.uk
     http:
      paths:
       - path: / 
