@@ -27,7 +27,7 @@ spec:
         txtOwnerId: "eks_cluster"
 
         extraArgs:
-          - --cloudflare-proxied=false
+          - --cloudflare-proxied
           - --zone-id-filter=4eb865c8c5349ae53c92f7bdac9f91da
 
         env:
