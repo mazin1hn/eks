@@ -27,6 +27,27 @@ depends_on = [
   ]
 }
 
+#EKS Access Entry for the User 
+
+resource "aws_eks_access_entry" "example" {
+  cluster_name      = aws_eks_cluster.eks_cluster.name
+  principal_arn     = "arn:aws:iam::678536383905:user/mazin"
+  type              = "STANDARD"
+}
+
+#Attatch policy to access entry
+
+resource "aws_eks_access_policy_association" "example" {
+  cluster_name  = aws_eks_cluster.eks_cluster.name
+  policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
+  principal_arn = "arn:aws:iam::678536383905:user/mazin"
+
+  access_scope {
+    type       = "cluster"
+    
+  }
+}
+
 #EKS Cluster IAM Role 
 
 resource "aws_iam_role" "eks_cluster_role" {
