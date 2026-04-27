@@ -1,25 +1,26 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
- name: eks-ingress
- annotations:
-  cert-manager.io/cluster-issuer: letsencrypt-prod
-
+  name: eks-ingress
+  namespace: eks-app
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
- ingressClassName: traefik
- tls:
-  - hosts:
-     - app.mazin1hn.uk
-    secretName: eks-app-tls
+  ingressClassName: traefik
 
- rules:
-  - host: app.mazin1hn.uk
-    http:
-     paths:
-      - path: / 
-        pathType: Prefix
-        backend:
-         service:
-          name: clusterip-svc
-          port:
-           number: 80
+  rules:
+    - host: app.mazin1hn.uk   
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: clusterip-svc
+                port:
+                  number: 80
+
+  tls:
+    - hosts:
+        - app.mazin1hn.uk
+      secretName: eks-app-tls
