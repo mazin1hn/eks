@@ -23,7 +23,7 @@ spec:
 
         domainFilters:
           - "mazin1hn.uk"  
-          
+      
         txtOwnerId: "eks_cluster"
 
         env:
@@ -43,6 +43,7 @@ spec:
 
   syncPolicy:
     automated:
+      enabled: true 
       prune: true
       selfHeal: true
     syncOptions:
