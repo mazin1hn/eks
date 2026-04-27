@@ -5,6 +5,8 @@ metadata:
   namespace: eks-app
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
+    external-dns.alpha.kubernetes.io/hostname: app.mazin1hn.uk
+    external-dns.alpha.kubernetes.io/target: aa53db17decd249e99009b5f49136b8c-279711686.eu-west-2.elb.amazonaws.com 
 spec:
   ingressClassName: traefik
 
