@@ -125,15 +125,27 @@ resource "aws_route" "private_route" {
   
 }
 
-#Route table association's
+#Private Subnet's Route table association's
 
-resource "aws_route_table_association" "private_route_table_association" {
-  subnet_id      = aws_subnet.private.id
+resource "aws_route_table_association" "private_route_table_association_a" {
+  subnet_id      = aws_subnet.private["private_subnet_a"].id
   route_table_id = aws_route_table.eks["private"].id
 }
 
-resource "aws_route_table_association" "publiv_route_table_association" {
-  subnet_id      = aws_subnet.public.id
+resource "aws_route_table_association" "private_route_table_association_b" {
+  subnet_id      = aws_subnet.private["private_subnet_b"].id
+  route_table_id = aws_route_table.eks["private"].id
+}
+
+#Public Subnet's Route Table association's 
+
+resource "aws_route_table_association" "public_route_table_association_a" {
+  subnet_id      = aws_subnet.public["public_subnet_a"].id
+  route_table_id = aws_route_table.eks["public"].id
+}
+
+resource "aws_route_table_association" "public_route_table_association_b" {
+  subnet_id      = aws_subnet.public["public_subnet_b"].id
   route_table_id = aws_route_table.eks["public"].id
 }
 
