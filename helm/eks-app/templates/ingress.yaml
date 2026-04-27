@@ -9,11 +9,11 @@ spec:
  ingressClassName: traefik
  tls:
   - hosts:
-     - eks.mazin1hn.uk
+     - app.mazin1hn.uk
     secretName: eks-app-tls
 
  rules:
-  - hosts: eks.mazin1hn.uk
+  - hosts: app.mazin1hn.uk
     http:
      paths:
       - path: / 
