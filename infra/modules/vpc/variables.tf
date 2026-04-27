@@ -35,7 +35,7 @@ variable "private_subnet_a_cidr_block" {   #Can change per env
 
 variable "private_subnet_a_name" {
     type = string 
-    default = "private-subnet-b"
+    default = "private-subnet-a"
   
 }
 
@@ -64,7 +64,7 @@ variable "public_subnet_a_cidr_block" {   #Can change per env
 
 variable "public_subnet_a_name" {
     type = string 
-    default = "public-subnet-b"
+    default = "public-subnet-a"
   
 }
 
