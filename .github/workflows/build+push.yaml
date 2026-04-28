@@ -59,7 +59,7 @@ jobs:
 
    - name: Update Helm values image tag
      run: |
-       sed -i 's|tag: ".*"|tag: "'"$IMAGE_TAG"'"|g' helm/eks-app/values.yaml
+       yq -i '.image.tag = strenv(IMAGE_TAG)' helm/eks-app/values.yaml
        echo "Updated values.yaml:"
        cat helm/eks-app/values.yaml
 
