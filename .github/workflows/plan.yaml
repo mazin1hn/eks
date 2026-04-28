@@ -1,13 +1,16 @@
 name: Plan Infrastructure
 
 on:
- workflow_dispatch:
-   inputs:
-     choice:
-      description: "Type 'confirm' to plan your infrastructure"
-      required: true 
-      type: string 
-      default: ""
+
+  workflow_run:
+
+    workflows: ["Build and Push Docker Image to ECR Repo"]
+
+    branches: [main]
+
+    types:
+
+      - completed
  
 
 jobs:

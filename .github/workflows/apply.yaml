@@ -1,13 +1,16 @@
 name: Apply Infrastructure
 
 on:
- workflow_dispatch:
-   inputs:
-     choice:
-      description: "Type 'confirm' to apply your infrastructure"
-      required: true 
-      type: string 
-      default: ""
+
+  workflow_run:
+
+    workflows: ["Plan Infrastructure"]
+
+    branches: [main]
+
+    types:
+
+      - completed
  
 
 jobs:
