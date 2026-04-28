@@ -14,7 +14,7 @@ on:
 
 jobs:
   build:
-    if: ${{ github.event.inputs.choice == 'confirm' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
 
     permissions:
