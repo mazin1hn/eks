@@ -1,4 +1,4 @@
 deployment:
   image: "678536383905.dkr.ecr.eu-west-2.amazonaws.com/eks"
-  tag: "da868510a3c5a9189c5a0e92d9d9be48bc29ff5b"
+  tag: "latest"
 #Dont push sensitive info 
