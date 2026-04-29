@@ -56,6 +56,18 @@ jobs:
     - name: Apply ArgoCD root app 
       run: kubectl apply -n argocd -f argocd/root-app.yaml
 
+    - name: Wait for cert-manager namespace
+      run: |
+       until kubectl get namespace cert-manager >/dev/null 2>&1; do
+         sleep 2
+       done
+
+    - name: Copy secret to cert-manager
+      run: |
+         kubectl get secret cloudflare-api-token -n kube-system -o yaml \
+         | sed 's/namespace: kube-system/namespace: cert-manager/' \
+         | kubectl apply -f -
+
     - name: Notify success
       if: success()
       run: echo Success! ArgoCD has been installed and configured!
