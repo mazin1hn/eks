@@ -21,7 +21,7 @@ spec:
               api_url: https://678536383905.dkr.ecr.eu-west-2.amazonaws.com
               prefix: 678536383905.dkr.ecr.eu-west-2.amazonaws.com
               ping: yes
-              credentials: auto
+              ecr: true
 
         serviceAccount:
           create: true
