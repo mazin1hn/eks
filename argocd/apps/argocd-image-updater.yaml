@@ -16,11 +16,6 @@ spec:
       values: |
         config:
           logLevel: debug
-          registries:
-            - name: ecr
-              prefix: 678536383905.dkr.ecr.eu-west-2.amazonaws.com
-              api_url: https://678536383905.dkr.ecr.eu-west-2.amazonaws.com
-              credentials: aws
 
         serviceAccount:
           create: true
