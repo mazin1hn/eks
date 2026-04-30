@@ -118,6 +118,7 @@ resource "aws_iam_policy" "image_updater_policy" {
         Effect = "Allow"
         Action = [
           "ecr:DescribeImages",
+          "ecr:GetAuthorizationToken",
           "ecr:ListImages",
           "ecr:BatchGetImage"
         ]
@@ -156,6 +157,7 @@ resource "aws_iam_role_policy_attachment" "image_updater_attach" {
   role       = aws_iam_role.image_updater_role.name
   policy_arn = aws_iam_policy.image_updater_policy.arn
 }
+
 
 
 
