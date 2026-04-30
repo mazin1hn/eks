@@ -57,6 +57,24 @@ jobs:
    - name: Push Docker Image 
      run: docker push $ECR_REPO:$IMAGE_TAG
 
+   - name: Update Helm values image tag
+     run: |
+       yq -i '.deployment.tag = strenv(IMAGE_TAG)' helm/eks-app/values.yaml
+       echo "Updated values.yaml:"
+       cat helm/eks-app/values.yaml
+
+   - name: Commit and push Helm tag update
+     run: |
+        git config user.name "github-actions"
+        git config user.email "github-actions@github.com"
+
+        git add helm/eks-app/values.yaml
+        git commit -m "chore(eks-app): bump image tag to $IMAGE_TAG" || echo "No changes to commit"
+
+        git pull --rebase origin main
+        git push origin HEAD:main
+
+
    - name: Notify success
      if: success()
      run: echo Success! Your Docker image has been built and pushed!
