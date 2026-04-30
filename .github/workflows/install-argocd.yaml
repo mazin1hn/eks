@@ -56,7 +56,7 @@ jobs:
     - name: Apply ArgoCD root app 
       run: kubectl apply -n argocd -f argocd/root-app.yaml
 
-    - name: Wait for cert-manager namespace
+    me: Wait for cert-manager namespace
       run: |
        until kubectl get namespace cert-manager >/dev/null 2>&1; do
          sleep 2
