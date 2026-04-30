@@ -106,5 +106,58 @@ resource "aws_iam_role_policy_attachment" "external_dns" {
 
 }
 
+#ArgodCD Image Updater IAM Policy
+
+resource "aws_iam_policy" "image_updater_policy" {
+  name = "argocd-image-updater-policy"
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = [
+          "ecr:DescribeImages",
+          "ecr:ListImages",
+          "ecr:BatchGetImage"
+        ]
+        Resource = "*"
+      }
+    ]
+  })
+}
+
+#ArgodCD Image Updater IAM Role 
+
+resource "aws_iam_role" "image_updater_role" {
+  name = "argocd-image-updater-role"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Effect = "Allow"
+      Principal = {
+        Federated = aws_iam_openid_connect_provider.eks_pods.arn
+      }
+      Action = "sts:AssumeRoleWithWebIdentity"
+      Condition = {
+        StringEquals = {
+          "${local.oidc_provider}:aud" = "sts.amazonaws.com"
+          "${local.oidc_provider}:sub" = "system:serviceaccount:argocd:argocd-image-updater"
+        }
+      }
+    }]
+  })
+}
+
+# Attach Policy 
+
+resource "aws_iam_role_policy_attachment" "image_updater_attach" {
+  role       = aws_iam_role.image_updater_role.name
+  policy_arn = aws_iam_policy.image_updater_policy.arn
+}
+
+
+
 
 
