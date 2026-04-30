@@ -10,18 +10,12 @@ spec:
   source:
     repoURL: https://argoproj.github.io/argo-helm
     chart: argocd-image-updater
-    targetRevision: 0.10.0
+    targetRevision: 0.14.0   
 
     helm:
       values: |
         config:
           logLevel: debug
-          registries:
-            - name: ecr
-              api_url: https://678536383905.dkr.ecr.eu-west-2.amazonaws.com
-              prefix: 678536383905.dkr.ecr.eu-west-2.amazonaws.com
-              ping: yes
-              ecr: true
 
         serviceAccount:
           create: true
