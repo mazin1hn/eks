@@ -23,7 +23,7 @@ spec:
                 name: cloudflare-api-token
                 key: api-token
 
-        args:
+        extraArgs:
           - --source=ingress
           - --provider=cloudflare
           - --domain-filter=mazin1hn.uk
