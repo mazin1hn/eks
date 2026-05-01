@@ -13,34 +13,23 @@ spec:
     targetRevision: 1.20.0
 
     helm:
+      values: |
+        provider: cloudflare
 
-  values: |
+        policy: sync
 
-    provider: cloudflare
+        env:
+          - name: CF_API_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: cloudflare-api-token
+                key: api-token
 
-    policy: sync   
-
-    env:
-
-      - name: CF_API_TOKEN
-
-        valueFrom:
-
-          secretKeyRef:
-
-            name: cloudflare-api-token
-
-            key: api-token
-
-    extraArgs:
-
-      - --source=ingress
-
-      - --domain-filter=mazin1hn.uk
-
-      - --registry=txt
-
-      - --txt-owner-id=eks_cluster
+        extraArgs:
+          - --source=ingress
+          - --domain-filter=mazin1hn.uk
+          - --registry=txt
+          - --txt-owner-id=eks_cluster
 
   destination:
     server: https://kubernetes.default.svc
