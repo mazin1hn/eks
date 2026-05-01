@@ -1,6 +1,6 @@
-# End to End Production Grade Deployment on AWS EKS - [Cloud Native Application]
+# ClusterCore - GitOps Driven Platform on Amazon EKS
 
-Built a **production-grade Kubernetes platform on Amazon EKS** with fully automated **GitOps deployments**, where pushing a Docker image triggers a **Git update → ArgoCD sync → live deployment**, eliminating manual intervention and ensuring consistent, reliable releases.
+Built an **end-to-end production-grade Kubernetes platform on Amazon EKS** with fully automated **GitOps deployments**, where pushing a Docker image triggers a **Git update → ArgoCD sync → live deployment**, eliminating manual intervention and ensuring consistent, reliable releases.
 
 This project demonstrates a **production-grade deployment of a cloud-native application on Amazon EKS**, with **all infrastructure provisioned using Terraform**, **GitOps automation via ArgoCD**, and a **fully automated CI/CD pipeline using GitHub Actions**.
 
