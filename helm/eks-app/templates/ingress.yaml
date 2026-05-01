@@ -12,7 +12,7 @@ spec:
   ingressClassName: traefik
 
   rules:
-    - host: app.mazin1hn.uk   
+    - host: app2.mazin1hn.uk   
       http:
         paths:
           - path: /
@@ -25,5 +25,5 @@ spec:
 
   tls:
     - hosts:
-        - app.mazin1hn.uk
+        - app2.mazin1hn.uk
       secretName: eks-app-tls
