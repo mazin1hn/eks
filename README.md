@@ -17,6 +17,14 @@ The setup follows modern DevOps best practices: modular Infrastructure as Code, 
 
 
 
+https://github.com/user-attachments/assets/b3bd27f4-5e0c-4a4a-afa1-5e3caa782d9e
+
+
+
+
+
+
+
 ### Deployment Verification
 
 - [View ArgoCD Healthy Application](./assets/argocd-healthy.png)
