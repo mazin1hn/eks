@@ -13,9 +13,15 @@ spec:
     targetRevision: 27.0.2
 
     helm:
-      values: |
-        service:
-          type: LoadBalancer  
+  values: |
+    service:
+      type: LoadBalancer
+
+    providers:
+      kubernetesIngress:
+        publishedService:
+          enabled: true
+          pathOverride: traefik/traefik 
 
   destination:
     server: https://kubernetes.default.svc
