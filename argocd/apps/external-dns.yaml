@@ -28,7 +28,6 @@ spec:
         extraArgs:
           - --source=ingress
           - --domain-filter=mazin1hn.uk
-          - --registry=txt
           - --txt-owner-id=eks_cluster
 
   destination:
