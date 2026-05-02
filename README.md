@@ -17,11 +17,7 @@ The setup follows modern DevOps best practices: modular Infrastructure as Code, 
 
 
 
-
-
-https://github.com/user-attachments/assets/c5b0aa8e-8ad7-4687-affa-e01b0882181f
-
-
+https://github.com/user-attachments/assets/b3bd27f4-5e0c-4a4a-afa1-5e3caa782d9e
 
 
 
@@ -32,9 +28,9 @@ https://github.com/user-attachments/assets/c5b0aa8e-8ad7-4687-affa-e01b0882181f
 ### Deployment Verification
 
 - [View ArgoCD Healthy Application](./assets/argocd-healthy.png)
-- [View Grafana Dashboard](./assets/running-dashboard.png)
-- [View Grafana Dashboard - Cluster ](./assets/grafana-cluster-dashboard.png)
-- [View Grafana Dashboard - Nodes ](./assets/grafana-nodes-dashboard.png)
+- [View Grafana Dashboard - Cluster ](assets/eks-cluster-dashboard.png)
+- [View Grafana Dashboard - Nodes ](./assets/eks-nodes-dashboard.png)
+- [View Prometheus Runtime](./assets/prometheus-runtime.png)
 - [View Healthy App](./assets/healthy-app.png)
 
 
