@@ -67,13 +67,11 @@ jobs:
      run: |
         git config user.name "github-actions"
         git config user.email "github-actions@github.com"
-
         git add helm/eks-app/values.yaml
         git commit -m "chore(eks-app): bump image tag to $IMAGE_TAG" || echo "No changes to commit"
 
         git pull --rebase origin main
         git push origin HEAD:main
-
 
    - name: Notify success
      if: success()
