@@ -181,7 +181,7 @@ eks/
 
 ### State Management
 - Remote Terraform state in S3  
-- State locking with DynamoDB  
+- State locking s3 native state locking  
 
 ---
 
