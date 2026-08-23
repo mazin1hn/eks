@@ -10,7 +10,7 @@ resource "aws_ecr_repository" "eks" {
 }
 
 resource "aws_s3_bucket" "eks" {
-  bucket = "mazin-eks-s3-bucket"
+  bucket = "mazin-eks-s3-bucket-agent"
 
   tags = {
     Name        = "eks-bucket"
@@ -19,7 +19,7 @@ resource "aws_s3_bucket" "eks" {
 }
 
 resource "aws_s3_bucket_public_access_block" "eks" {
-  bucket = aws_s3_bucket.example.id
+  bucket = aws_s3_bucket.eks.id
 
   block_public_acls       = true
   block_public_policy     = true
